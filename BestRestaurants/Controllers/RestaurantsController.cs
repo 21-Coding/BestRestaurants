@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BestRestaurants.Controllers
 {
-  public class RestaurantsController : Controllers
+  public class RestaurantsController : Controller
   {
     private readonly BestRestaurantsContext _db;
 
@@ -33,19 +33,20 @@ namespace BestRestaurants.Controllers
     public ActionResult Create()
     {
       // "Name" needs to match the db
-      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+      ViewBag.CuisineId = new SelectList(_db.Cuisine, "CuisineId", "Name");
+      return View();
     }
 
     public ActionResult Details(int id)
     {
-      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.restaurantId == id);
+      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
       return View(thisRestaurant);
     }
 
     public ActionResult Edit(int id)
     {
       var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
-      ViewBag.CusineId = new SelectList(_db.Cuisines, "CusineId", "Name");
+      ViewBag.CusineId = new SelectList(_db.Cuisine, "CusineId", "Name");
       return View(thisRestaurant);
     }
 
