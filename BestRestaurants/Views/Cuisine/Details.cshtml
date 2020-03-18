@@ -1,13 +1,12 @@
 @{
   Layout = "_Layout";
 }
-
 @using BestRestaurants.Models;
-@model BestRestaurants.Models.Category;
+@model BestRestaurants.Models.Cuisine;
 
 <h2>Cuisine Details</h2>
 <hr />
-<h3>@Html.DisplayCuisineNameFor(model => model.CuisineName): @Html.DisplayFor(model => model.CuisineName)</h3>
+<h3>@Html.DisplayNameFor(model => model.CuisineName): @Html.DisplayFor(model => model.CuisineName)</h3>
 
 <ul>
 @if (@Model.Restaurants.Count == 0)
@@ -15,9 +14,10 @@
   <p>No restaurants listed</p>
 }
 
-@foreach (Item item in @Model.Restaurants)
+@foreach (Restaurant restaurant in Model.Restaurants)
+//@Model.Restaurants
 {
-  <li>Name: @item.Name</li>
+  <li>Name: @restaurant.Name</li>
 }
 </ul>
 
