@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <title>To Do List</title>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Best Restaurants</title>
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Best Restaurants</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/restaurants">List Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/restaurants/create">Add Restaurants</a>
+        </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+      @using (Html.BeginForm("search","Restaurants")) {
+      <input type="text" name="search" class="form-control mr-sm-2"/>
+      <input type="submit" value="search" class="btn btn-outline-success my-2 my-sm-0">
+      }
+      </div>
+    </div>
+  </nav>
     <div class="container">
-      @RenderBody()
+    @RenderBody()
     </div>
   </body>
 </html>
