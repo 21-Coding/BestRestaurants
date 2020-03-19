@@ -4,22 +4,26 @@
 @using BestRestaurants.Models;
 @model BestRestaurants.Models.Cuisine;
 
-<h2>Cuisine Details</h2>
+<div class="col-md-8 offset-md-2">
+  <h2>Cuisine Details</h2>
+</div>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.CuisineName): @Html.DisplayFor(model => model.CuisineName)</h3>
+<div class="col-md-8 offset-md-2">
+  <h3>@Html.DisplayNameFor(model => model.CuisineName): @Html.DisplayFor(model => model.CuisineName)</h3>
 
-<ul>
-@if (@Model.Restaurants.Count == 0)
-{
-  <p>No restaurants listed</p>
-}
+  <ul>
+  @if (@Model.Restaurants.Count == 0)
+  {
+    <p>No restaurants listed</p>
+  }
 
-@foreach (Restaurant restaurant in Model.Restaurants)
-//@Model.Restaurants
-{
-  <li>Name: @restaurant.Name</li>
-}
-</ul>
+  @foreach (Restaurant restaurant in Model.Restaurants)
+  //@Model.Restaurants
+  {
+    <li>Name: @restaurant.Name</li>
+  }
+  </ul>
+</div>
 
 <p>@Html.ActionLink("Back to Cuisines", "Index")</p>
 <p>@Html.ActionLink("Edit Cuisine", "Edit", new { id = Model.CuisineId })</p>

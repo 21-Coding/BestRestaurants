@@ -7,12 +7,12 @@
 <h4 class="text-center">Add a Cuisine</h4>
 <div class="col-md-6 offset-md-3">
 
-@using (Html.BeginForm())
-{
-  <div class="form-group">
-    @Html.LabelFor(model => model.CuisineName)
-    @Html.TextBoxFor(model => model.CuisineName, new { @class = "form-control", required = "required"})
-  </div>
-  <input type="submit" value="Add new cuisine" class="btn btn-outline-success my-2 my-sm-0">
-}
-@* <p>@Html.ActionLink("Show all cuisines", "Index")</p> *@
+  @using (Html.BeginForm())
+  {
+    <div class="form-group">
+      @Html.LabelFor(model => model.CuisineName)
+      @Html.TextBoxFor(model => model.CuisineName, new { @class = "form-control", required = "required"})
+    </div>
+    <input type="submit" value="Add new cuisine" class="btn btn-outline-success my-2 my-sm-0">
+  }
+</div>
