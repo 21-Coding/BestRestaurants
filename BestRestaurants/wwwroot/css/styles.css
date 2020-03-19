@@ -1,6 +1,23 @@
 
 body {
   text-align: center;
-  font-family: 'Anton', sans-serif;
+  
 }
 
+.navbar {
+  font-family: 'Anton', sans-serif;
+  
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  /* margin-top: 20px; */
+  
+
+}
+
+span {
+  font-family: 'Great Vibes', cursive;
+  font-size: 7rem ;
+  
+}
