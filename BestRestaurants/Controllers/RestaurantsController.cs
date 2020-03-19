@@ -33,7 +33,7 @@ namespace BestRestaurants.Controllers
     public ActionResult Create()
     {
       // "Name" needs to match the db
-      ViewBag.CuisineId = new SelectList(_db.Cuisine, "CuisineId", "Name");
+      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
       return View();
     }
 
@@ -46,7 +46,7 @@ namespace BestRestaurants.Controllers
     public ActionResult Edit(int id)
     {
       var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
-      ViewBag.CusineId = new SelectList(_db.Cuisine, "CusineId", "Name");
+      ViewBag.CusineId = new SelectList(_db.Cuisines, "CusineId", "Name");
       return View(thisRestaurant);
     }
 
