@@ -18,7 +18,7 @@
   @foreach (Restaurant restaurant in Model)
   {
     <li>@Html.ActionLink($"{restaurant.Name}", "Details", new { id = restaurant.RestaurantId }) : @restaurant.Location
-      @for (var i=1; i < restaurant.Rating; i++)
+      @for (var i=0; i < restaurant.Rating; i++)
       {
        <span class="fa fa-star"></span>
       }
